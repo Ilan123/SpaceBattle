@@ -26,6 +26,7 @@ public class MapGenerator : MonoBehaviour
     {
     }
     
+    
     public void GenerateTile(Transform previousTileTransform)
     {
         GameObject prefabNewTile;
@@ -37,13 +38,13 @@ public class MapGenerator : MonoBehaviour
         Vector3 prevTileSize = previousTileTransform.Find("Plane").GetComponent<Renderer>().bounds.size;
         
         Vector3 pos = previousTileTransform.position;
-        pos.z += prevTileSize.z; // first position scale
+        pos.z += prevTileSize.z /2f; // first position scale
         //pos.y -= 0.01f;
         GameObject newTile = Instantiate(prefabNewTile, pos, transform.rotation);
 
         Vector3 newTileSize = newTile.transform.Find("Plane").GetComponent<Renderer>().bounds.size;
-        //pos.z += newTileSize.z / 2f;
-        //newTile.transform.position = pos;
+        pos.z += newTileSize.z / 2f;
+        newTile.transform.position = pos;
 
         //Debug.Log("Tile: " + newTile.name + ", prev: " + prevTileSize + ",new: " + newTileSize + ",pos: " + pos);
         //Debug.Log("NNN_Tile: " + newTile.name + ", prev: " + previousTileTransform.Find("Plane").GetComponent<Renderer>().bounds.size + ",new: " + newTile.transform.Find("Plane").GetComponent<Renderer>().bounds.size);

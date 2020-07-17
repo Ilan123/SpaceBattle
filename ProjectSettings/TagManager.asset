@@ -9,6 +9,7 @@ TagManager:
   - TilePlayerCollider
   - Obstacle
   - Obstacle_D
+  - TilePlatform
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - 
   - 
   - TileGeneratorComp
-  - 
-  - 
-  - 
+  - Tile
+  - Player
+  - Obstacle
   - 
   - 
   - 

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
-
     [SerializeField] AudioSource themeMusic;
     [SerializeField] float playerBoostRate = 1.5f;
     [SerializeField] float timeToActiveThePlayerBoost = 100f;
@@ -18,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private float playerScore;
     private float playerPrevScore;
+    private float gameTime;
     private void Awake()
     {
         timeScale = 1f;
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameTime = 0;
         timeScale = 1f;
         Time.timeScale = timeScale;
         GameManager.instance = this;
@@ -51,14 +52,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hasPlayerBeenBoosted && Time.time > timeToActiveThePlayerBoost)
+        gameTime += Time.deltaTime;
+        if (!hasPlayerBeenBoosted && gameTime > timeToActiveThePlayerBoost)
         {
             Debug.Log("The Player Has Been Boosted!");
             Debug.Log(Time.time);
             player.GetComponent<Movement>().ScaleUp(playerBoostRate);
             hasPlayerBeenBoosted = true;
         }
-        if(!hasTimeBeenBoosted && Time.time > timeToActiveThetimeBoost)
+        if(!hasTimeBeenBoosted && gameTime > timeToActiveThetimeBoost)
         {
             Debug.Log("The Time Has Been Boosted!");
             Debug.Log(Time.time);
@@ -67,7 +69,7 @@ public class GameManager : MonoBehaviour
             hasTimeBeenBoosted = true;
         }
 
-        playerScore += Time.deltaTime;
+        playerScore = gameTime;
 
         if ((int)playerScore - (int)playerPrevScore >= 1)
             UIManager.instance.SetScore((int)playerScore);
@@ -77,8 +79,14 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You Lost");
         Time.timeScale = 0;
-        themeMusic.Stop();
+
+        if (PlayerPrefs.GetInt("BestScore", 0) < (int)playerScore) // saves the new record
+            PlayerPrefs.SetInt("BestScore", (int)playerScore);
+
+        Debug.Log("Saved: " + PlayerPrefs.GetInt("BestScore", 0));
+
         UIManager.instance.ShowLoseMenu();
+        SoundManager.instance.stopThemeMusic();
     }
 
     public void Pause()

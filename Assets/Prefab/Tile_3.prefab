@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1705152890937699886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 9120957632847950428}
   - component: {fileID: 694927513675147043}
   - component: {fileID: 1350527010598945264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane_2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 3933329187654778199}
   - component: {fileID: 3877441116137276009}
   - component: {fileID: 6136067023519122308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane_P_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,6 +485,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 8998724766368896365, guid: a67a20c7644cfbb4891a8e6af19dea9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67a20c7644cfbb4891a8e6af19dea9d, type: 3}
 --- !u!4 &4601108465943957858 stripped
@@ -503,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}
@@ -599,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 5506809771073507406}
   - component: {fileID: 8219692581194063031}
   - component: {fileID: 764802202000573982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2000713263892180645}
   - component: {fileID: 211902072971412798}
   - component: {fileID: 8648477458398289441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8452133961816956085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ PrefabInstance:
     - target: {fileID: 2337355564097415121, guid: e0d2a27289453a34cb3f9a2daf7038f8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 3484214645362564477, guid: e0d2a27289453a34cb3f9a2daf7038f8,
         type: 3}
@@ -528,11 +528,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle_D
       objectReference: {fileID: 0}
+    - target: {fileID: 7098981387120129201, guid: e0d2a27289453a34cb3f9a2daf7038f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7849314842309107105, guid: e0d2a27289453a34cb3f9a2daf7038f8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c372df4a12ce8d4db928662a72533f2, type: 2}
+      objectReference: {fileID: 2100000, guid: da1052d296d610f48a29bcef1e25ae17, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d2a27289453a34cb3f9a2daf7038f8, type: 3}
 --- !u!4 &2979193993382664589 stripped
@@ -558,6 +563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228814210748092075, guid: 4b4d9dfcf83e09c4abec587d229fe83c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7936569732167572939, guid: 4b4d9dfcf83e09c4abec587d229fe83c,
         type: 3}
@@ -705,6 +715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7098981387120129201, guid: e0d2a27289453a34cb3f9a2daf7038f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d2a27289453a34cb3f9a2daf7038f8, type: 3}
 --- !u!4 &419425166255382052 stripped
@@ -724,6 +739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228814210748092075, guid: 4b4d9dfcf83e09c4abec587d229fe83c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7936569732167572939, guid: 4b4d9dfcf83e09c4abec587d229fe83c,
         type: 3}
@@ -1065,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 1153125626477874075, guid: a67a20c7644cfbb4891a8e6af19dea9d,
         type: 3}
@@ -1166,6 +1186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098981387120129201, guid: e0d2a27289453a34cb3f9a2daf7038f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d2a27289453a34cb3f9a2daf7038f8, type: 3}

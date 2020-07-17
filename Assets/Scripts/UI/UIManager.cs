@@ -8,9 +8,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject LoseMenu;
-    [SerializeField] GameObject scoreGameObj;
     [SerializeField] GameObject deBugMenu;
-    private Text scoreTxt;
+    [SerializeField] Text scoreTxt;
     public static UIManager instance;
 
 
@@ -20,7 +19,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        scoreTxt = scoreGameObj.GetComponent<Text>();
+
     }
     public void TryAgian()
     {
@@ -33,6 +32,7 @@ public class UIManager : MonoBehaviour
     }
     public void Resume()
     {
+        SoundManager.instance.playThemeMusic();
         GameManager.instance.Unpause();
         PauseMenu.SetActive(false);
     }
@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     }
     public void ShowPauseMenu()
     {
+
+        SoundManager.instance.pauseThemeMusic();
         GameManager.instance.Pause();
         PauseMenu.SetActive(true);
     }

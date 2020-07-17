@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float accelerateToCurrentSpeedRate = 4f;
     [SerializeField] private float accelerateToSideRate = 4f;
     private GameObject playerBody;
-    [SerializeField] private float sideMoveSensitivity = 0.005f;
+    [SerializeField] private float sideMoveSensitivity = 0.0005f;
     private float currentSpeed;
     private float targetSpeed;
     private Rigidbody rb;
@@ -86,14 +86,17 @@ public class Movement : MonoBehaviour
         float xDeltaBwtweenPlayerAndTargetPos = TargetPos.x - transform.position.x;
         float direction = Mathf.Sign(xDeltaBwtweenPlayerAndTargetPos);
         xDeltaBwtweenPlayerAndTargetPos = Mathf.Abs(xDeltaBwtweenPlayerAndTargetPos);
+        Vector3 newPos = transform.position;
         if (xDeltaBwtweenPlayerAndTargetPos > sideMoveSensitivity)
         {
-            Vector3 newPos = transform.position;
             //float accelerateManipulated = 1 + (Mathf.Abs(xDeltaBwtweenPlayerAndTargetPos) * xDeltaBwtweenPlayerAndTargetPos) * accelerateToSideRate;
             newPos.x += direction * ((xDeltaBwtweenPlayerAndTargetPos + accelerateToSideRate) * Time.deltaTime);
-            transform.position = newPos;
         }
-
+        else if(xDeltaBwtweenPlayerAndTargetPos > sideMoveSensitivity / 10f)
+        {
+            newPos.x += direction * xDeltaBwtweenPlayerAndTargetPos / 1.5f;
+        }
+        transform.position = newPos;
     }
 
     public void ScaleUp(float rate)
